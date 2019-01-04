@@ -1,6 +1,7 @@
 # compile files
 *.class
 build.gradle
+./gradle
 
 #folder
 .g8/

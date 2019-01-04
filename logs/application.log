@@ -1,11 +1,11 @@
-2019-01-04 14:20:02,849 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-01-04 15:09:59,006 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2019-01-04 14:20:02,913 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)
-2019-01-04 14:20:19,126 [ERROR] from akka.dispatch.TaskInvocation in application-akka.actor.default-dispatcher-5 - Unable to look up TXT record for host cluster0-xsvln.mongodb.net
+2019-01-04 15:09:59,085 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2019-01-04 15:10:15,099 [ERROR] from akka.dispatch.TaskInvocation in application-akka.actor.default-dispatcher-6 - Unable to look up TXT record for host cluster0-xsvln.mongodb.net
 com.mongodb.MongoConfigurationException: Unable to look up TXT record for host cluster0-xsvln.mongodb.net
 	at com.mongodb.internal.dns.DnsResolver.resolveAdditionalQueryParametersFromTxtRecords(DnsResolver.java:123)
 	at com.mongodb.ConnectionString.<init>(ConnectionString.java:353)
@@ -41,9 +41,9 @@ Caused by: java.net.SocketTimeoutException: Receive timed out
 	at com.sun.jndi.dns.DnsClient.doUdpQuery(DnsClient.java:422)
 	at com.sun.jndi.dns.DnsClient.query(DnsClient.java:211)
 	... 23 common frames omitted
-2019-01-04 14:20:29,832 [ERROR] from application in application-akka.actor.default-dispatcher-3 - 
+2019-01-04 15:10:31,744 [ERROR] from application in application-akka.actor.default-dispatcher-6 - 
 
-! @7aefpn8ic - Internal server error, for (GET) [/day/1234] ->
+! @7aeg6c3af - Internal server error, for (GET) [/day/1234] ->
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[MongoConfigurationException: Unable to look up TXT record for host cluster0-xsvln.mongodb.net]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
