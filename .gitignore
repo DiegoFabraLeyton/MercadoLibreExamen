@@ -1,8 +1,11 @@
 # compile files
 *.class
+build.gradle
 
 #folder
 .g8/
 .idea/
 target/
 logs/
+gradle/
+
