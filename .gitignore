@@ -1,0 +1,8 @@
+# compile files
+*.class
+
+#folder
+.g8/
+.idea/
+target/
+
