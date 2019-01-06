@@ -28,7 +28,7 @@ public class DayService implements DayRepository {
     @Override
     public Optional<Day> findDay(int date) {
         final MongoCursor<Day> as = days().find("{date:#}", date).as(Day.class);
-        Optional<Day> dayOptional = Optional.ofNullable(as.next());
+        Optional<Day> dayOptional = Optional.ofNullable((as.hasNext()? as.next(): null));
         return dayOptional;
     }
 
