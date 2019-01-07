@@ -13,4 +13,6 @@ public interface DayRepository {
 
    void insertListDay(List<Day> dayList);
 
+   Optional<SimulationObject> findSimulation();
+
 }

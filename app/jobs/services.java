@@ -3,10 +3,7 @@ package jobs;
 import Geometry.*;
 import akka.actor.ActorSystem;
 import com.google.inject.Inject;
-import model.DayService;
-import model.Planet;
-import model.SimulationSystem;
-import model.SystemReference;
+import model.*;
 import scala.concurrent.ExecutionContext;
 import scala.concurrent.duration.Duration;
 
@@ -67,8 +64,6 @@ public class services {
     private void simulateSystem() {
 
         repositoryDI.deleteDaysCollection();
-        System.out.println("Inicial simulaticion");
-
         final List<Planet> planets;planets = new ArrayList<>();
 
         final Velocity velocityFerengi = new Velocity(1.0, SENSE.NEGATIVE);
@@ -87,8 +82,11 @@ public class services {
         planets.add(vulcano);
 
         final SimulationSystem system = new SimulationSystem(new Point(0.0,0.0),planets,modelDI,referenceDI,repositoryDI);
-        System.out.print(system.getStatistic(10));
+        final SimulationObject object = new SimulationObject();
+        final String statistic = system.getStatistic(10);
+        object.setInformationFormat(statistic);
+        repositoryDI.insertSimulation(object);
 
-        System.out.println("Termina simulacion");
+
     }
 }

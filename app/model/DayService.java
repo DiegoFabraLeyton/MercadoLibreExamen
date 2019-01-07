@@ -44,5 +44,19 @@ public class DayService implements DayRepository {
         days().drop();
     }
 
+    private MongoCollection simulation(){
+        return  connection.getConnection().getCollection("Simulation");
+    }
+
+    public void insertSimulation(final SimulationObject object){
+        simulation().insert(object);
+    }
+
+    @Override
+    public Optional<SimulationObject> findSimulation(){
+        final MongoCursor<SimulationObject> objects = simulation().find().as(SimulationObject.class);
+        Optional<SimulationObject> optional = Optional.ofNullable(objects.hasNext() ? objects.next() : null);
+        return optional;
+    }
 
 }

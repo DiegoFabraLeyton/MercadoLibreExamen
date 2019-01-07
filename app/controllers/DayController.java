@@ -9,9 +9,9 @@ import play.mvc.*;
 import java.util.Optional;
 
 
-/*
-
-*/
+/**
+ * Esta clase contiene un action que maneja el http request de DayController
+ */
 public class DayController extends Controller {
 
     private DayRepository dayRepository;
@@ -22,6 +22,12 @@ public class DayController extends Controller {
     }
 
 
+    /**
+     *
+     * @param date
+     * @return el número de day y el clima en formatoJson o
+     * retorna un 204 si el dia no es encontrado
+     */
     public Result show(int date){
         final Optional<Day> day =dayRepository.findDay(date);
         if(day.isPresent())
