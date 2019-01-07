@@ -36,6 +36,11 @@ public class SimulationSystem {
         initStatistic();
     }
 
+    /**
+     *
+     * @param years
+     * @return String, con todas las estadisticas de la simulación
+     */
     public String getStatistic(@NotNull int years){
         final Map<String, Integer> simulate = simulate(years);
         final Map<String, Double> rainiestDayMap = rainiestDay();
@@ -44,6 +49,11 @@ public class SimulationSystem {
 
     }
 
+    /**
+     *
+     * @param years
+     * @return Mapa con toda la simulación de los 3 planetas
+     */
     private Map<String, Integer> simulate(final int years) {
         final List<Day> days = new ArrayList<>();
         final SolarSystem solarSystem = new SolarSystem(center, planetList, model,reference);
@@ -71,6 +81,9 @@ public class SimulationSystem {
         return statistics;
     }
 
+    /*
+        Maneja los peridoso de la simulación
+     */
     private int handlerPeriodWeather(int weatherLastDay,final int day,final String weather){
         if(weatherLastDay != 0 && (day - weatherLastDay) != 1){
             addPeriodToWeatherMap(weather);
@@ -84,6 +97,11 @@ public class SimulationSystem {
         statistics.put(weather,value + 1);
     }
 
+
+    /**
+     *
+     * @return Devuelve el día más lluvioso
+     */
     private Map<String,Double> rainiestDay(){
         final Double maxValue = rainiestDayMap.values().stream().max(Comparator.naturalOrder()).orElse(0.0);
         return rainiestDayMap.entrySet()

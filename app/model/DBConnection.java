@@ -9,6 +9,9 @@ import org.jongo.Jongo;
 import com.typesafe.config.Config;
 
 
+/**
+ *  Conexión con la Base de datos Mongo DB
+ */
 public class DBConnection {
 
     private Jongo jongo;

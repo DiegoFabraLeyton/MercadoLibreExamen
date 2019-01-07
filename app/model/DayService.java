@@ -10,6 +10,10 @@ import org.jongo.MongoCursor;
 import java.util.List;
 import java.util.Optional;
 
+
+/**
+ * Clase que implenetar el repository, esta se hace a traves de Mongo DB
+ */
 @Singleton
 public class DayService implements DayRepository {
 

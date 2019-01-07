@@ -1,5 +1,8 @@
 package Geometry;
 
+/**
+ * Clase que representa el vector velocidad
+ */
 public class Velocity {
 
     private Double magnitude;

@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
+/**
+ *  Clase que realiza el servicio de simulacion del sistema planetario
+ */
 public class services {
 
      private final CollinearPoint modelDI;
@@ -25,6 +28,15 @@ public class services {
      private final ActorSystem actorSystem;
 
 
+    /**
+     * Injecto todas las dependencias del sistema
+     *
+     * @param modelDI
+     * @param referenceDI
+     * @param repositoryDI
+     * @param executionContext
+     * @param actorSystem
+     */
 
     @Inject
     public services(CollinearPoint modelDI, SystemReference referenceDI, DayService repositoryDI, ExecutionContext executionContext, ActorSystem actorSystem) {
@@ -36,6 +48,9 @@ public class services {
         this.initialize();
     }
 
+    /**
+     * Inicializa el Job para correr una vez al dia
+     */
     private void initialize(){
         this.actorSystem.scheduler().schedule(
                 Duration.create(1, TimeUnit.SECONDS), // initialDelay
@@ -46,6 +61,9 @@ public class services {
     }
 
 
+    /**
+     * Se inicializa los planetas, y se comienza la simulación
+     */
     private void simulateSystem() {
 
         repositoryDI.deleteDaysCollection();

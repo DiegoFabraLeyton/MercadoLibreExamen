@@ -11,9 +11,15 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 
+
 @Singleton
 public class ErrorHandler implements HttpErrorHandler {
 
+
+    /*
+        Método retorna mensaje de error cuando la conexión del cliente puede estar mal
+        o tiene un bad request
+     */
     @Override
     public CompletionStage<Result> onClientError(Http.RequestHeader request, int statusCode, String message) {
         return CompletableFuture.completedFuture(

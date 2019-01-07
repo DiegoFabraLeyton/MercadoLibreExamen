@@ -7,10 +7,15 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Singleton
 public class GeometryUtils implements CollinearPoint {
 
-
+    /**
+     *
+     * @param points, lista de puntos a evaluar
+     * @return true, si los puntos son colineales, método determinante
+     */
     @Override
     public boolean isInLine(@NotNull List<Point> points) {
         final List<Point> list = points.stream().distinct().collect(Collectors.toList());
@@ -27,6 +32,13 @@ public class GeometryUtils implements CollinearPoint {
         return false;
     }
 
+    /**
+     *
+     * @param x1 , punto a evaular
+     * @param x2,  punto a evaluar
+     * @param x3 , punto a evaluar
+     * @return true, si los puntos son colineales
+     */
     private boolean doOperation(Point x1, Point x2, Point x3) {
         return Precision.round((x1.getX() - x2.getX()) * (x2.getY() - x3.getY()) - ((x2.getX() - x3.getX()) * (x1.getY() - x2.getY())), 2) == 0.0;
     }

@@ -9,6 +9,9 @@ import Geometry.Velocity;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * Clase que representa un planeta
+ */
 public class Planet implements CelestialObject {
 
     private final Velocity velocity;
@@ -39,7 +42,11 @@ public class Planet implements CelestialObject {
         return "Planet{" +  "velocity=" + velocity + ", distanceToCenter=" + distanceToCenter + ", position=" + position + '}';
     }
 
-
+    /**
+     *
+     * @param time, dias a moverse
+     * @param reference, systema de referencia que se mueve. se hace por DI
+     */
     @Override
     public void move(int time, SystemReference reference) {
         angle = moveAngle(time);

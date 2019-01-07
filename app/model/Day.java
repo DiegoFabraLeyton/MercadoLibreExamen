@@ -5,6 +5,9 @@ package model;
 
 import org.jongo.marshall.jackson.oid.MongoObjectId;
 
+/**
+ * Clase que mapea el objecto Day
+ */
 public class Day {
 
     @MongoObjectId

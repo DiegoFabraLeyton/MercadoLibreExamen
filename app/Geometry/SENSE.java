@@ -1,5 +1,8 @@
 package Geometry;
 
+/**
+ * Enum que representa el sentido de giro
+ */
 public enum SENSE {
 
     NEGATIVE(-1),

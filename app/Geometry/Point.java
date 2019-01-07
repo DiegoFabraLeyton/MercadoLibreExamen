@@ -1,5 +1,8 @@
 package Geometry;
 
+/**
+ * Clase que representa un punto
+ */
 public class Point {
 
     private final double X;
