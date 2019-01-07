@@ -1,8 +1,5 @@
 package model;
 
-
-
-
 import org.jongo.marshall.jackson.oid.MongoObjectId;
 
 /**
@@ -14,6 +11,8 @@ public class Day {
     private String _id;
     private int date;
     private String weather;
+
+    public Day() {}
 
     public Day(int date, String weather) {
         this.date = date;
