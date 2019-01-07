@@ -7,21 +7,13 @@ public class SimulationObject {
     @MongoObjectId
     private String _id;
 
-    private String informationFormat;
-
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
-    }
+    private String statistics;
 
     public String getInformationFormat() {
-        return informationFormat;
+        return statistics;
     }
 
-    public void setInformationFormat(String informationFormat) {
-        this.informationFormat = informationFormat;
+    public void setInformationFormat(String statistics) {
+        this.statistics = statistics;
     }
 }

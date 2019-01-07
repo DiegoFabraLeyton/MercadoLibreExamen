@@ -15,10 +15,6 @@ public class Day {
     private int date;
     private String weather;
 
-    public Day() {
-
-    }
-
     public Day(int date, String weather) {
         this.date = date;
         this.weather = weather;
