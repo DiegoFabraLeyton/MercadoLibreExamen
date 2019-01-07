@@ -45,7 +45,7 @@ public class SimulationSystem {
         final Map<String, Integer> simulate = simulate(years);
         final Map<String, Double> rainiestDayMap = rainiestDay();
         return String.format("drought periods :  %d , optimal periods:  %d, rainy periods:  %d, rainy day:  %s ",
-                simulate.get(DROUGHT), simulate.get(OPTIMAL), simulate.get(RAINY), rainiestDayMap.entrySet().stream().findFirst());
+                simulate.get(DROUGHT), simulate.get(OPTIMAL), simulate.get(RAINY), rainiestDayMap.entrySet().stream().findFirst().get());
 
     }
 

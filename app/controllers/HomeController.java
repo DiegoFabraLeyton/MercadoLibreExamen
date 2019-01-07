@@ -1,7 +1,6 @@
 package controllers;
 
 import com.google.inject.Inject;
-import model.Day;
 import model.DayRepository;
 import model.SimulationObject;
 import play.libs.Json;
